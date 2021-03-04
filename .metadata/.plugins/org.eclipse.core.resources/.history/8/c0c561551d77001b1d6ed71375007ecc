@@ -1,0 +1,12 @@
+package com.mashibing.juc.c_020;
+/*
+ * ReentrantLock用于替换synchronized
+ * 由于m1锁定this，只有m1执行完毕的时候，m2才执行
+ * 
+ * 使用ReentrantLock可以完成synchronized相同的功能
+ * 需要注意的是，必须手动上锁、手动解锁
+ * 
+ */
+public class T03_ReentrantLock3 {
+
+}

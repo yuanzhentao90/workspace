@@ -1,0 +1,31 @@
+package com.mashibing.juc.c01;
+
+import java.util.concurrent.TimeUnit;
+
+public class T {
+
+	volatile 
+	boolean running = true;
+	
+	void m() {
+		System.out.println("m method start");
+		try {
+			TimeUnit.SECONDS.sleep(2);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("m method end");
+	}
+	
+	public static void main(String[] args) {
+		T t = new T();
+		new Thread(t::m,"t1").start();
+		try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		t.running = false;
+	}
+}

@@ -1,0 +1,31 @@
+package com.mashibing.juc.c_020;
+
+import java.util.Random;
+import java.util.concurrent.Phaser;
+
+public class T08_TestPhaser {
+
+	static Random r = new Random();
+	static MarriagePhaser phaser = new MarriagePhaser();
+	
+	
+	static class MarriagePhaser extends Phaser{
+		@Override
+		protected boolean onAdvance(int phase, int registeredParties) {
+			switch (phase) {
+			case 0:
+				System.out.println("所有人到齐了！");
+				return false;
+			case 1:
+				System.out.println("所有人吃完了");
+				return false;
+			case 2:
+				System.out.println("所有人离开了");
+				System.out.println("婚礼结束");
+				return true;
+			default:
+				return true;
+			}
+		}
+	}
+}

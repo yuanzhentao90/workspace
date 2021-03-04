@@ -1,0 +1,31 @@
+package com.atguigu.java8;
+
+import java.util.Arrays;
+import java.util.List;
+
+import com.atguigu.java8.Employee.Status;
+/*
+ * 终止操作
+ */
+public class TestStreamAPI3 {
+
+	List<Employee> employees = Arrays.asList(
+			new Employee(20,"lily",5000,Status.FREE),
+			new Employee(30,"lucy",7000,Status.BUSY),
+			new Employee(35,"jerry",8000,Status.VOCATION),
+			new Employee(40,"Tomy",9000,Status.FREE),
+			new Employee(38,"Jim",9500,Status.BUSY)
+		);
+	
+	/*
+	 * 查找与匹配
+	 * allMatch —— 检查是否匹配所有元素
+	 * anyMatch —— 检查是否匹配至少一个元素
+	 * noneMatch —— 检查是否没有匹配所有元素
+	 * findFirst —— 返回第一个元素
+	 * findAny —— 返回当前流中的任意元素
+	 * count —— 返回流中元素的总个数
+	 * max —— 返回流中最大值
+	 * min —— 返回流中最小值
+	 */
+}

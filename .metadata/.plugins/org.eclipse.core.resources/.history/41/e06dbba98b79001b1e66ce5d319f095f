@@ -1,0 +1,38 @@
+package com.mashibing.juc.c_020_01_Interview;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+public class T06_LockSupport {
+
+	volatile List lists = new ArrayList<>();
+
+	public void add(Object o) {
+		lists.add(o);
+	}
+
+	public int size() {
+		return lists.size();
+	}
+	
+	public static void main(String[] args) {
+	
+		T06_LockSupport c = new T06_LockSupport();
+		
+		new Thread(()->{
+			
+		},"t2").start();
+		
+		try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		new Thread(()->{
+			
+		},"t1").start();
+	}
+	
+}

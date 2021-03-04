@@ -1,0 +1,27 @@
+package com.mashibing.baseThread;
+
+/*
+ * Í£Ö¹Ïß³Ì
+ */
+public class TestStopThread {
+
+	
+	
+}
+
+class MyRunnable implements Runnable{
+	
+	private boolean flag = true;
+	
+	@Override
+	public void run() {
+		int i = 0;
+		while (flag) {
+			System.out.println(" "+i++);
+		}
+	}
+	
+	public void shutdown() {
+		this.flag = false;
+	}
+}

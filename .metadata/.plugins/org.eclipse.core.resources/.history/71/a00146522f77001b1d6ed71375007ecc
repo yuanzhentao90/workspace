@@ -1,0 +1,34 @@
+package com.mashibing.juc.c_020;
+/*
+ * ReentrantLock用于替换synchronized
+ * 由于m1锁定this，只有m1执行完毕的时候，m2才执行
+ * 
+ * 使用ReentrantLock可以完成synchronized相同的功能
+ * synchronized在程序遇到异常的时候会自动释放锁，ReentrantLock不会自动释放锁，必须手动解锁
+ * 需要注意的是，必须手动上锁、手动解锁为防止程序执行出现异常，应讲解锁代码放到finally代码块中
+ * 
+ */
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class T03_ReentrantLock3 {
+
+	Lock lock = new ReentrantLock();
+	
+	void m1() {
+		try {
+			lock.lock();
+			for (int i = 0; i < 10; i++) {
+				TimeUnit.SECONDS.sleep(1);
+				System.out.println(i);
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}finally {
+			lock.unlock();
+		}
+	}
+	
+}

@@ -1,0 +1,28 @@
+package com.mashibing.baseThread;
+
+public class TestSync implements Runnable{
+	
+	public static void main(String[] args) {
+		
+	}
+	
+	@Override
+	public void run() {
+		
+	}
+}
+
+class Timer{
+	private static int num = 0;
+	
+	public void add(String name) {
+		num++;
+		try {
+			Thread.sleep(10);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(name+"：你是第："+num+"个使用timer线程的。");
+	}
+}

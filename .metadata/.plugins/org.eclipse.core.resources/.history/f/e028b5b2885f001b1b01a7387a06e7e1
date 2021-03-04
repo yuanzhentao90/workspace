@@ -1,0 +1,12 @@
+#表示去其他eureka注册中心注册
+#eureka.client.register-with-eureka=false
+#保持默认值，以保证数据的一致性。都设置成false表示强调高可用性
+#表示拉取其他eureka注册中心的数据
+#eureka.client.fetch-registry=false
+
+#配的这个defaultZone表示向其他eureka注册中心，注册服务
+#eureka.client.service-url.defaultZone=http://euk2.com:8080/eureka/
+
+#eureka.instance.appname=euk1.com
+spring.application.name=EurekaServer
+spring.profiles.active=euk1

@@ -1,0 +1,20 @@
+package com.mashibing.juc.c_020;
+
+import java.util.concurrent.locks.ReentrantLock;
+
+public class T05_ReentrantLock5 {
+
+	private static ReentrantLock lock = new ReentrantLock(true);//参数true表示为公平锁
+	
+	public void run() {
+		for (int i = 0; i < 10; i++) {
+			lock.lock();
+			try {
+				System.out.println(Thread.currentThread().getName()+"获得锁");
+			} finally {
+				lock.unlock();
+			}
+		}
+	}
+	
+}

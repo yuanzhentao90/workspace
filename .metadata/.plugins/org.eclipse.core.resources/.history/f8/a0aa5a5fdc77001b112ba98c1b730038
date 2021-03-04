@@ -1,0 +1,16 @@
+package com.mashibing.juc.c_020;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+/*
+ * ¶ÁËø£º¹²ÏíËø
+ * Ğ´Ëø£ºÅÅËûËø
+ */
+public class T10_TestReadWriteLock {
+
+	static Lock lock = new ReentrantLock();
+	
+	private static int value;
+	
+}

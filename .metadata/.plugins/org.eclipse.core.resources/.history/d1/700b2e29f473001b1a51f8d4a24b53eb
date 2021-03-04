@@ -1,0 +1,25 @@
+package com.mashibing.baseThread;
+
+import java.util.FormatFlagsConversionMismatchException;
+
+/*
+ * Í£Ö¹Ïß³Ì
+ */
+public class TestStopThread {
+
+	
+	
+}
+
+class MyRunnable implements Runnable{
+	
+	private boolean flag = true;
+	
+	@Override
+	public void run() {
+		int i = 0;
+		while (flag) {
+			System.out.println(" "+i++);
+		}
+	}
+}

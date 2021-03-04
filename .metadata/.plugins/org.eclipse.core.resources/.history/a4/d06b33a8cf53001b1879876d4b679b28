@@ -1,0 +1,24 @@
+package com.atguigu.java8;
+
+import java.util.Arrays;
+import java.util.List;
+
+import com.atguigu.java8.Employee.Status;
+/*
+ * ÷’÷π≤Ÿ◊˜
+ */
+public class TestStreamAPI3 {
+
+	List<Employee> employees = Arrays.asList(
+			new Employee(20,"lily",5000,Status.FREE),
+			new Employee(30,"lucy",7000,Status.BUSY),
+			new Employee(35,"jerry",8000,Status.VOCATION),
+			new Employee(40,"Tomy",9000,Status.FREE),
+			new Employee(38,"Jim",9500,Status.BUSY)
+		);
+	
+	/*
+	 * ≤È’“”Î∆•≈‰
+	 * 
+	 */
+}

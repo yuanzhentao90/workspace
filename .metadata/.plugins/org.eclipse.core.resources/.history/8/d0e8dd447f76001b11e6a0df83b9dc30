@@ -1,0 +1,10 @@
+package com.mashibing.juc.c_018_00_AtomicXXX;
+
+import java.util.concurrent.atomic.AtomicLong;
+
+public class T02_AtmoicVsSyncVsLongAdder {
+
+	static long count2 = 0L;
+	static AtomicLong count1 = new AtomicLong(0L);
+	
+}

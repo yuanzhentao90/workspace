@@ -1,0 +1,7 @@
+package com.mashibing.baseThread;
+/*
+ * 线程优先级
+ */
+public class TestPriority {
+
+}

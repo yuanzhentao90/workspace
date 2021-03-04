@@ -1,0 +1,13 @@
+package com.nashibing.tank;
+
+import java.awt.Frame;
+
+public class T {
+
+	public static void main(String[] args) {
+		Frame frame = new Frame();
+		frame.setVisible(true);
+		
+	}
+
+}

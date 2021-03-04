@@ -1,0 +1,41 @@
+package com.mashibing.baseThread;
+/*
+ * 
+ */
+public class TT implements Runnable{
+
+	int b = 100;
+	
+	public synchronized void m1() {
+		b = 1000;
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("b = "+b);
+	}
+	
+	public void m2() {
+		System.out.println(b);
+	}
+	
+	public static void main(String[] args) {
+		TT tt = new TT();
+		Thread thread = new Thread(tt);
+		thread.start();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		tt.m2();
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		m1();
+	}
+}

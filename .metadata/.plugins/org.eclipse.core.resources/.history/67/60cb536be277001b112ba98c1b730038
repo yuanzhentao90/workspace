@@ -1,0 +1,37 @@
+package com.mashibing.juc.c_020;
+
+import java.util.concurrent.Semaphore;
+
+public class T11_TestSemaphore {
+
+	public static void main(String[] args) {
+		Semaphore s = new Semaphore(2);//允许多少个线程同时执行，用于限流
+		
+		new Thread(()->{
+			try {
+				s.acquire();
+				System.out.println("t1 running");
+				Thread.sleep(200);
+				System.out.println("t1 running");
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				s.release();
+			}
+		}).start();
+		
+		new Thread(()->{
+			try {
+				s.acquire();
+				System.out.println("t2 running");
+				Thread.sleep(200);
+				System.out.println("t2 running");
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} finally {
+				s.release();
+			}
+		}).start();
+	}
+	
+}

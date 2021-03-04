@@ -1,0 +1,19 @@
+package com.nashibing.tank;
+
+import java.awt.Frame;
+
+public class T {
+
+	public static void main(String[] args) {
+		Frame frame = new Frame();
+		//设置窗口大小
+		frame.setSize(800, 600);
+		//设置窗口大小不能改变
+		frame.setResizable(false);
+		//设置标题
+		frame.setTitle("Tank war");
+		//设置窗口可见
+		frame.setVisible(true);
+	}
+
+}
